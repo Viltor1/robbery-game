@@ -1,6 +1,6 @@
 import math
 village=[]
-day=[]
+intResult=[]
 def robbery (resourses,armyCapacity):
     result=[]
     sumResourses = sum(resourses) # общее количество ресурсов в деревне
@@ -8,8 +8,8 @@ def robbery (resourses,armyCapacity):
 
         proportion = armyCapacity/sumResourses #Определение рациональной пропорции
         floatResult = [i*proportion for i in resourses] #Определение сколько каждого ресурса можно унести с учётом пропорции
-        day = [math.trunc(floatResult[i]) for i in range(len(floatResult))] #Целые числа сворованных товаров
-        remain = armyCapacity-sum(day) #Cколько ещё пространства осталось
+        intResult = [math.trunc(floatResult[i]) for i in range(len(floatResult))] #Целые числа сворованных товаров
+        remain = armyCapacity-sum(intResult) #Cколько ещё пространства осталось
 
         remainders = [i%1 for i in floatResult]
         # remain = round(sum(remainders)) #ost
